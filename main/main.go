@@ -20,6 +20,7 @@ var suj2 = [10][10]rune{
 }
 
 func main() {
+	z01.PrintRune('\n')
 	for _, i := range suj2 {
 		z01.PrintRune('[')
 		for _, j := range i {
@@ -27,6 +28,8 @@ func main() {
 			z01.PrintRune(' ')
 		}
 		z01.PrintRune(']')
+		z01.PrintRune('\n')
 	}
+	z01.PrintRune('\n')
 	Correction.Solver(suj2)
 }
