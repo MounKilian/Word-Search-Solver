@@ -34,10 +34,16 @@ Des connaissances dans les domaines ci dessous :
 
 # Fabrication 
 
-"description des differentes fonctions"
+1. solver.go permet de faire le lien entre toutes les fonctions de recherches et les prints
+
+2. horizontal.go permet de chercher tout les mots horizontalement dans le tableau a deux dimensions
 
 # Version
 
 golang 1.21.0
 
 # Auteurs
+
+1. Moun Kilian
+
+2. Marciniak Lucas

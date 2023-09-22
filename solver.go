@@ -3,6 +3,12 @@ package Correction
 import "github.com/01-edu/z01"
 
 func Solver(field [10][10]rune) {
+	/// Mots Trouvés =
+	intro := "Mots Trouvés ="
+	for _, o := range intro {
+		z01.PrintRune(o)
+	}
+	z01.PrintRune('\n')
 	/// Cherche tout les mots horizontalement
 	resultHorizontal := []string{}
 	for _, i := range field {
