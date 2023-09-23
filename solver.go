@@ -55,6 +55,40 @@ func Solver(field [10][10]rune) {
 		}
 	}
 	z01.PrintRune(']')
+	/// Cherche tout les mots en diagonal vers le bas
+	resultDiagonalDown := []string{}
+	for y := 9; y >= 0; y-- {
+		var diagonal []rune
+		for x := y; x < 10; x++ {
+			diagonal = append(diagonal, field[y+(x-y)][x-y])
+		}
+		word := DiagonalDown(diagonal)
+		if word != "" {
+			resultDiagonalDown = append(resultDiagonalDown, word)
+		}
+	}
+	for x := 9; x > 0; x-- {
+		var diagonal []rune
+		for y := x; y < 10; y++ {
+			diagonal = append(diagonal, field[y-x][x+(y-x)])
+		}
+		word := DiagonalDown(diagonal)
+		if word != "" {
+			resultDiagonalDown = append(resultDiagonalDown, word)
+		}
+	}
+	/// On print tout les mots qu'on a trouvé en diagonal vers le bas
+	z01.PrintRune('[')
+	for _, j := range resultDiagonalDown {
+		for _, k := range j {
+			z01.PrintRune(k)
+		}
+		if j != resultDiagonalDown[len(resultDiagonalDown)-1] {
+			z01.PrintRune(',')
+			z01.PrintRune(' ')
+		}
+	}
+	z01.PrintRune(']')
 }
 
 /// Mots Trouvés =
