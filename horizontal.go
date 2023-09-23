@@ -6,8 +6,8 @@ import (
 	"os"
 )
 
-func Horizontal(line [10]rune) string {
-	word := ""
+func Horizontal(line [10]rune) []string {
+	word := []string{}
 	lineStr := ""
 	for _, i := range line {
 		lineStr += string(i)
@@ -25,13 +25,13 @@ func Horizontal(line [10]rune) string {
 	for fileScanner.Scan() {
 		lineWord := fileScanner.Text()
 		if len(lineWord) == len(lineStr) && (lineStr[0:len(lineWord)] == lineWord) {
-			word += lineStr[0:len(lineWord)]
+			word = append(word, lineStr[0:len(lineWord)])
 		} else {
-			for i := 0; i < len(lineStr)-len(lineWord); i++ {
+			for i := 0; i < len(lineStr)-len(lineWord)+1; i++ {
 				for j := 0; j < len(lineWord); j++ {
 					if lineStr[i] == lineWord[j] {
 						if lineStr[i:i+len(lineWord)] == lineWord {
-							word += lineStr[i : i+len(lineWord)]
+							word = append(word, lineStr[i:i+len(lineWord)])
 						}
 					}
 				}
