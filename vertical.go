@@ -2,7 +2,7 @@ package Correction
 
 import (
 	"bufio"
-	"fmt"
+	"log"
 	"os"
 )
 
@@ -15,7 +15,7 @@ func Vertical(column []rune) []string {
 	readFile, err := os.Open("words.txt")
 
 	if err != nil {
-		fmt.Println(err)
+		log.Println(err)
 	}
 
 	fileScanner := bufio.NewScanner(readFile)
