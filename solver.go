@@ -5,12 +5,26 @@ import (
 )
 
 func Solver(field [10][10]rune) {
+	/// Print du field
+	z01.PrintRune('\n')
+	for _, i := range field {
+		z01.PrintRune('[')
+		for _, j := range i {
+			z01.PrintRune(j)
+			z01.PrintRune(' ')
+		}
+		z01.PrintRune(']')
+		z01.PrintRune('\n')
+	}
+	z01.PrintRune('\n')
+
 	/// Mots Trouvés =
 	intro := "Mots Trouvés ="
 	for _, o := range intro {
 		z01.PrintRune(o)
 	}
 	z01.PrintRune('\n')
+
 	/// Cherche tout les mots horizontalement
 	resultHorizontal := []string{}
 	for _, i := range field {
@@ -37,6 +51,7 @@ func Solver(field [10][10]rune) {
 		}
 		z01.PrintRune(']')
 	}
+
 	/// Cherche tout les mots verticalement
 	resultVertical := []string{}
 	for x := 0; x < 10; x++ {
