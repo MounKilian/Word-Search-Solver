@@ -2,8 +2,6 @@ package main
 
 import (
 	"Correction"
-
-	"github.com/01-edu/z01"
 )
 
 var suj2 = [10][10]rune{
@@ -20,16 +18,5 @@ var suj2 = [10][10]rune{
 }
 
 func main() {
-	z01.PrintRune('\n')
-	for _, i := range suj2 {
-		z01.PrintRune('[')
-		for _, j := range i {
-			z01.PrintRune(j)
-			z01.PrintRune(' ')
-		}
-		z01.PrintRune(']')
-		z01.PrintRune('\n')
-	}
-	z01.PrintRune('\n')
 	Correction.Solver(suj2)
 }
